@@ -1,6 +1,6 @@
 const service = require('../service/content')
 
-exports.createcontentcontroller = async (req,res,next) => {
+exports.createContentController = async (req,res,next) => {
     try {
         const user_id = req.user_id
         const {title,story} = req.body
@@ -11,7 +11,7 @@ exports.createcontentcontroller = async (req,res,next) => {
     }
 }
 
-exports.getcontentcontroller = async (req,res,next) => {
+exports.getContentController = async (req,res,next) => {
     try {
        const data = await service.getcontent(req.params.content_id)
        res.status(201).json({result:data}) 
@@ -20,7 +20,7 @@ exports.getcontentcontroller = async (req,res,next) => {
     }
 }
 
-exports.getnewcontentscontroller = async (req,res,next) => {
+exports.getNewContentsController = async (req,res,next) => {
     try {
         const data = await service.getnewcontents()
         res.status(201).json({result:data})
@@ -29,7 +29,7 @@ exports.getnewcontentscontroller = async (req,res,next) => {
     }
 }
 
-exports.updatestory = async (req,res,next) => {
+exports.updateStory = async (req,res,next) => {
     try {
         const {story} = req.body
         const content_id = req.params.content_id
@@ -40,40 +40,40 @@ exports.updatestory = async (req,res,next) => {
     }
 }
 
-exports.updatetitle = async (req,res,next) => {
+exports.updateTitle = async (req,res,next) => {
     try {
         const {title} = req.body
         const content_id = req.params.content_id
-        const data = await service.updatetitle(content_id,title)
+        const data = await service.updateTitle(content_id,title)
         res.status(200).json({success:true})
     } catch(err) {
         next(err)
     }
 }
 
-exports.gettoplikedcontents = async (req, res,next) => {
+exports.getTopLikedContents = async (req, res,next) => {
     try {
-        const data = await service.gettoplikedcontents() 
+        const data = await service.getTopLikedContents() 
         res.status(201).json({result:data})
     } catch(err) {
         next(err)
     }
 } 
 
-exports.gettopreadcontents = async (req, res,next) => {
+exports.getTopReadContents = async (req, res,next) => {
     try {
-        const data = await service.gettopreadcontents() 
+        const data = await service.getTopReadContents() 
         res.status(201).json({result:data})
     } catch(err) {
         next(err)
     }
 } 
 
-exports.deletecontent = async (req,res,next) => {
+exports.deleteContent = async (req,res,next) => {
     try{
         const content_id = req.query.content_id
-        const data = await service.deletecontent(content_id) 
-        res.status(201).json({success:true})
+        const data = await service.deleteContent(content_id) 
+        res.status(201).json({ success: true })
     } catch(err) {
         next(err)
     }

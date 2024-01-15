@@ -12,12 +12,12 @@ exports.getcontent = async(content_id) => {
     return data
 }
 
-exports.updatetitle = async(content_id, title) => {
-    await repo.updatetitle(content_id,title)
+exports.updateTitle = async(content_id, title) => {
+    await repo.updateTitle(content_id,title)
 }
 
 exports.updatestoty = async(content_id, story) => {
-    await repo.updatestory(content_id,story)
+    await repo.updateStory(content_id,story)
 }
 
 exports.getnewcontents = async() => {
@@ -25,7 +25,7 @@ exports.getnewcontents = async() => {
     return data
 }
 
-exports.gettoplikedcontents = async() => {
+exports.getTopLikedContents = async() => {
 
     // fetch top liked content ids from User interaction service
     // through API Composition other methods can also be used like 
@@ -51,7 +51,7 @@ exports.gettoplikedcontents = async() => {
     return ordered_contents
 }
 
-exports.gettopreadcontents = async() => {
+exports.getTopReadContents = async() => {
 
     // fetch top liked content ids from User interaction service
     // through API Composition other methods can also be used like 
@@ -78,8 +78,8 @@ exports.gettopreadcontents = async() => {
     return ordered_contents
 }
 
-exports.deletecontent = async(content_id) => {
+exports.deleteContent = async(content_id) => {
 
-    const data = await repo.deletecontent(content_id)
+    const data = await repo.deleteContent(content_id)
     return data
 }

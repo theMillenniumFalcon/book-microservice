@@ -1,7 +1,7 @@
 const { generateToken } = require('../utils/auth')
 const service = require('../../service/user')
 
-exports.registercontroller = async(req,res,next) => {
+exports.registerController = async(req,res,next) => {
     try {
         const data = await service.createuser(req.body)
         const Token = await generateToken(data._id)
@@ -13,7 +13,7 @@ exports.registercontroller = async(req,res,next) => {
     }
 }
 
-exports.logincontroller = async(req,res,next)=>{
+exports.loginController = async(req,res,next)=>{
     try {
         const data = await service.authuser(req.body)
         const Token = await generateToken(data._id)
@@ -24,7 +24,7 @@ exports.logincontroller = async(req,res,next)=>{
     }
 }
 
-exports.getusercontroller = async(req,res,next)=>{
+exports.getUserController = async(req,res,next)=>{
     try {
         const data = await service.getuser(req.params.id) 
         res.status(200).json({result:data})
@@ -33,7 +33,7 @@ exports.getusercontroller = async(req,res,next)=>{
     }
 }
 
-exports.deleteusercontroller = async(req,res,next)=>{
+exports.deleteUserController = async(req,res,next)=>{
     try{
         await service.deleteuser(req.user_id) 
         res.status(200).json({success:true})
@@ -43,7 +43,7 @@ exports.deleteusercontroller = async(req,res,next)=>{
     }
 }
 
-exports.getlistofuserscontroller = async(req,res,next)=>{
+exports.getListOfUsersController = async(req,res,next)=>{
     try{
         const data = await service.listofusers()
         res.status(200).json({data:data, success:true})
@@ -52,7 +52,7 @@ exports.getlistofuserscontroller = async(req,res,next)=>{
     }
 }
 
-exports.updatephonecontroller = async(req,res,next)=>{
+exports.updatePhoneController = async(req,res,next)=>{
     try{
         const {newPhone} = req.body
         await service.updatephone(req.user_id,newPhone)
@@ -62,7 +62,7 @@ exports.updatephonecontroller = async(req,res,next)=>{
     }
 }
 
-exports.updatepasswordcontroller = async(req,res,next)=>{
+exports.updatePasswordController = async(req,res,next)=>{
     try{
         const {newPassword} = req.body
         await service.updatepassword(req.user_id,newPassword)
@@ -72,7 +72,7 @@ exports.updatepasswordcontroller = async(req,res,next)=>{
     }
 }
 
-exports.updatenamecontroller = async(req,res,next)=>{
+exports.updateNameController = async(req,res,next)=>{
     try{
         const {newName} = req.body
         await service.updatename(req.user_id, newName)

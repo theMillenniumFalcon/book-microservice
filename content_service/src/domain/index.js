@@ -20,7 +20,7 @@ exports.sortcontentnew = async() => {
     return data
 }
 
-exports.updatetitle = async({content_id, newtitle}) => {
+exports.updateTitle = async({content_id, newtitle}) => {
     const data = await Content.findByIdAndUpdate(
         {_id:content_id},
         {title: newtitle}
@@ -28,7 +28,7 @@ exports.updatetitle = async({content_id, newtitle}) => {
     return data
 }
 
-exports.updatestory = async({content_id, newstory}) => {
+exports.updateStory = async({content_id, newstory}) => {
     const data = await Content.findByIdAndUpdate(
         {_id:content_id},
         {story: newstory}
@@ -36,7 +36,7 @@ exports.updatestory = async({content_id, newstory}) => {
     return data
 }
 
-exports.deletecontent = async(content_id) => {
+exports.deleteContent = async(content_id) => {
     const data = await Content.findByIdAndDelete(
         {_id:content_id}
     )
