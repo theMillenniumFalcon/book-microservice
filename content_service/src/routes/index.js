@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const contents = require('../controller')
+const contents = require('../controllers')
 const { verifyToken } = require('../utils/auth')
 
 router.post('/', verifyToken, contents.createcontentcontroller)
