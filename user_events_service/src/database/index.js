@@ -9,7 +9,7 @@ const connectDB = async() => {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
-    console.log('user interaction database connected')
+    console.log('user events database connected')
 }
 
 module.exports = connectDB

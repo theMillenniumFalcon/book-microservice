@@ -10,12 +10,12 @@ const PORT = development.port || 6000
 app.use(express.json())
 
 const main = async () => {
-    connectDB()
+    // connectDB()
     app.use(pageNotfound)
     app.use(ErrorHandler)
     
     const server = app.listen(PORT, () => {
-        console.log(`user interaction service listening on port ${PORT}`)
+        console.log(`user events service listening on port ${PORT}`)
     })
 
     process.on('unhandledRejection', (err, promise) => {
