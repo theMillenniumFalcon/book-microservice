@@ -14,7 +14,7 @@ const main = async () => {
     console.log("Success", data) 
 
     const server = app.listen(PORT, () => {
-        console.log(`listening on port ${PORT}`)
+        console.log(`email service listening on port ${PORT}`)
     })
 
     process.on('unhandledRejection', (err, promise) => {
