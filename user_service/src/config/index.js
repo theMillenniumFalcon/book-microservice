@@ -10,6 +10,6 @@ module.exports = {
         host: process.env.HOST,
         db_port: process.env.DB_PORT,
         port: process.env.PORT,
-        privateKey: process.env.privateKey,
+        privateKey: process.env.PRIVATE_KEY,
     }
 }

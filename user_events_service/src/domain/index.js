@@ -1,6 +1,6 @@
 const User_Events = require('../schema')
 
-exports.updatelike = async(content_id, user_id) => {
+exports.updateLike = async(content_id, user_id) => {
     const options =  {upsert: true, new: true, setDefaultsOnInsert: true}
     const data = await User_Events.findOneAndUpdate(
        { content_id },
@@ -10,7 +10,7 @@ exports.updatelike = async(content_id, user_id) => {
     return data
 }
 
-exports.updateread = async(content_id, user_id) => {
+exports.updateRead = async(content_id, user_id) => {
     const options =  {upsert: true, new: true, setDefaultsOnInsert: true}
     const data = await User_Events.findOneAndUpdate(
         { content_id },
@@ -22,17 +22,17 @@ exports.updateread = async(content_id, user_id) => {
     return data
 }
 
-exports.getcontentlikes = async(content_id) => {
+exports.getContentLikes = async(content_id) => {
     const data = await User_Events.findOne({ content_id }, 'liked_by')
     return data
 }
 
-exports.getcontentreads = async(content_id) => {
+exports.getContentReads = async(content_id) => {
     const data = await User_Events.findOne({ content_id }, 'read_by')
     return data
 }
 
-exports.getpopularlikescontents = async() => {
+exports.getPopularLikesContents = async() => {
     const data = await User_Events.aggregate([
         {
             $project:{
@@ -49,7 +49,7 @@ exports.getpopularlikescontents = async() => {
     return data
 }
 
-exports.getpopularreadcontents = async() => {
+exports.getPopularReadContents = async() => {
     const data = await User_Events.aggregate([
         {
             $project:{
