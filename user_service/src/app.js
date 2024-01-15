@@ -1,18 +1,13 @@
 const express = require('express')
 const app = express()
 
-const MessageBroker = require('./utils/subscriber')
 const { development } = require('./config')
 
-const PORT = development.port || 4000 
+const PORT = development.port || 3000 
 
 app.use(express.json())
 
 const main = async () => {
-    const msg = await new MessageBroker().init()
-    const data = await msg.subscribe()
-    console.log("Success", data) 
-
     const server = app.listen(PORT, () => {
         console.log(`listening on port ${PORT}`)
     })
