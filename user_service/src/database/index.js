@@ -5,11 +5,11 @@ const { development } = require('../config')
 const DB_PORT = development.db_port
 
 const connectDB = async() => {
-    await mongoose.connect(`mongodb://mongo:${DB_PORT}/content`, {
+    await mongoose.connect(`mongodb://mongo:${DB_PORT}/user`, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
-    console.log('content database connected')
+    console.log('user database connected')
 }
 
 module.exports = connectDB
