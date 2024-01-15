@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 
+const connectDB = require('./database')
 const { development } = require('./config')
 const { pageNotfound, ErrorHandler } = require('./utils/error/error-handler')
 
@@ -9,6 +10,7 @@ const PORT = development.port || 6000
 app.use(express.json())
 
 const main = async () => {
+    connectDB()
     app.use(pageNotfound)
     app.use(ErrorHandler)
     
