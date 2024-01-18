@@ -122,8 +122,8 @@ Run the docker compose yaml file to start: `docker-compose -f docker-compose.yam
     ]
   }
   ```
- ## User interaction service
- - User Interaction service is basically to record events done by the user. In this case the service records 2 types of
+ ## User Events service
+ - User Events service is basically to record events done by the user. In this case the service records 2 types of
    events - Like and Read.
  - Like - The content liked by the current user.
  - Read - The content i.e book completely read by the user.
@@ -136,9 +136,9 @@ Run the docker compose yaml file to start: `docker-compose -f docker-compose.yam
 
      Comepleted reading a content            PUT    http:://api/interact/read
 
-     get like interaction on given content   GET    http:://api/interact/:content_id/likes
+     get like event on given content   GET    http:://api/interact/:content_id/likes
      
-     get read interaction on given content   GET    http:://api/interact/:content_id/read
+     get read event on given content   GET    http:://api/interact/:content_id/read
 
    
 - Request 
