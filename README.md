@@ -107,7 +107,7 @@ Run the docker compose yaml file to start: `docker-compose -f docker-compose.yam
       },
       {
          "_id": "61f82ba9daa122263e6f0c1d",
-         "title": "HEllo world",
+         "title": "Hello world",
          "story": "Random story",
          "user_id": "61f82b9d2dfca828d5238e2c",
          "createdAt": "2022-01-31T18:34:17.596Z"
